@@ -70,7 +70,7 @@ show_options("beef", 0)
 show_options("chicken", 0)
 
 df = pd.DataFrame.from_dict(final_dict)
-print("Panda's DF: ", df)
+print("Panda's DF:", df)
 engine = sql.create_engine('sqlite:///Lean_Green.db')
 df.to_sql('lean_green', con=engine, if_exists='replace', index=False)
 query_result = engine.execute("SELECT * FROM lean_green;").fetchall()
