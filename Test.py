@@ -16,6 +16,24 @@ class Recipes_Tester(unittest.TestCase):
         expected = get_final_dict()
         self.assertEqual(observed, expected)
 
+    def test_dataframe(self):
+        print('\nTesting dataframe type')
+        observed = '<class 'pandas.core.frame.DataFrame'>'
+        expected = type(df)
+        self.assertEqual(observed, expected)
+
+    def test_sql_engine(self):
+        pass
+
+    def test_query_prep_result(self):
+        pass
+    
+    def test_query_meal_result(self):
+        pass
+
+    def test_query_nutrition_result(self):
+        pass
+
 
 
 if __name__ == '__main__':

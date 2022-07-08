@@ -1,5 +1,5 @@
 name: Tests
-on: pull requests
+on: push
 
 jobs:
   unit-tests:
@@ -17,4 +17,4 @@ jobs:
 
       - name: Test with unittest
         run: |
-          python3 -m unittest test.py
+          python3 -m unittest Test.py

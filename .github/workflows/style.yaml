@@ -1,5 +1,5 @@
 name: Check Style
-on: pull requests
+on: push
 
 jobs:
   check-style:

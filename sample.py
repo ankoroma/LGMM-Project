@@ -107,7 +107,7 @@ def create_selection(idx_list, item):
         for i in idx_list:
                 get_recipe(item, i)
 
-indices = set(get_cal(main_ingred, cal_count))
+indices = set(get_cal(cal_count))
 create_selection(indices, main_ingred)
 
 
@@ -139,3 +139,4 @@ nutrition_df.columns = ['Name', 'Calories', 'Fat', 'Carbs', 'Protein', 'Sugar', 
 #print("Here is the link to the full recipe:", "\n", recipe_link)
 print(type(df))
 print(type(engine))
+print(type(query_prep_result))
