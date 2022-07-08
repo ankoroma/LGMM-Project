@@ -129,6 +129,7 @@ prep_df.columns = ['Name', 'Prep Time', 'Serving Size', 'Ingredients']
 meal_df.columns = ['Name', 'Meal Type', 'Dish Type', 'Health Label', 'Diet Label', 'Cuisine', 'Meal ID']
 nutrition_df.columns = ['Name', 'Calories', 'Fat', 'Carbs', 'Protein', 'Sugar', 'Sodium']
 
+'''
 # Print results
 #print("Meal Information:", "\n", meal_df, "\n\n")
 #print("Preparation: ", "\n", prep_df, "\n\n")
@@ -137,6 +138,9 @@ nutrition_df.columns = ['Name', 'Calories', 'Fat', 'Carbs', 'Protein', 'Sugar', 
 #choice = int(input("Enter the Meal ID of the recipe you want to make (located on the far left of the tables above): "))
 #recipe_link = collection['hits'][choice]['recipe']['url'] 
 #print("Here is the link to the full recipe:", "\n", recipe_link)
-print(type(df))
-print(type(engine))
-print(type(query_prep_result))
+print((str(type(df)))
+#print(type(engine)
+#print((type(query_prep_result)))
+print(engine)
+print(query_prep_result)
+'''
