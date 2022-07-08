@@ -24,7 +24,7 @@ print("Welcome to the Lean Green Meal Machine!")
 main_ingred = input("Input up to 2 main items you want in your meal: ")
 
 # Take input about calorie count
-cal_count = input("Input the maximum number of calories you would like in your meal: ")
+cal_count = input("Input max number of calories you want in your meal: ")
 
 # Collection of Recipes
 collection = e.search_recipe(main_ingred)
