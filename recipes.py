@@ -5,7 +5,8 @@ import pandas as pd
 import sqlalchemy as sql
 import random
 
-random.seed(146)  # for testing purposes only
+
+random.seed(146) # for testing purposes only
 
 
 # Authentication
@@ -19,16 +20,14 @@ e = Edamam(
 )
 
 # Search prompt:
-main_ingred = input(
-    "Welcome to the Lean Green Meal Machine! Input up to two main ingredients that you want in your meal: "
-)
+print("Welcome to the Lean Green Meal Machine!")
+main_ingred = input("Input up to two main ingredients that you want in your meal: ")
 
 # Take input about calorie count
 cal_count = input("Input the maximum number of calories you would like in your meal: ")
 
 # Collection of Recipes
 collection = e.search_recipe(main_ingred)
-
 
 # Dictionary containing items for recipe
 final_dict = {
