@@ -6,7 +6,7 @@ import sqlalchemy as sql
 import random
 
 
-random.seed(146) # for testing purposes only
+random.seed(146)   # for testing purposes only
 
 
 # Authentication
@@ -21,7 +21,7 @@ e = Edamam(
 
 # Search prompt:
 print("Welcome to the Lean Green Meal Machine!")
-main_ingred = input("Input up to two main ingredients that you want in your meal: ")
+main_ingred = input("Input up to 2 main items you want in your meal: ")
 
 # Take input about calorie count
 cal_count = input("Input the maximum number of calories you would like in your meal: ")
