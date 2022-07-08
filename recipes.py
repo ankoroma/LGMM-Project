@@ -61,7 +61,9 @@ def get_cal(cal_max):
             calories = int((collection["hits"][idx]["recipe"]["calories"]) / serving)
         else:
             serving = 2
-            calories = int((collection["hits"][idx]["recipe"]["calories"]) / serving)
+            calories = int(
+                (collection["hits"][idx]["recipe"]["calories"]) / serving
+            )
 
         if calories < int(cal_max):
             rec_idx_list.append(idx)
