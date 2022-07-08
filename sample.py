@@ -6,6 +6,7 @@ import sqlalchemy as sql
 import random
 
 
+
 e = Edamam(nutrition_appid='26d80d09',
            nutrition_appkey='33fa304b7f52b8f304123a71ee739bfd',
            recipes_appid='a643e9ab',
@@ -46,7 +47,7 @@ final_dict = {'Name' : [],
 }
 
 
-def get_cal(item, cal_max):
+def get_cal(cal_max):
         rec_idx_list = []
         while len(rec_idx_list) < 8:
                 max = len(collection['hits']) - 1
@@ -129,10 +130,12 @@ meal_df.columns = ['Name', 'Meal Type', 'Dish Type', 'Health Label', 'Diet Label
 nutrition_df.columns = ['Name', 'Calories', 'Fat', 'Carbs', 'Protein', 'Sugar', 'Sodium']
 
 # Print results
-print("Meal Information:", "\n", meal_df, "\n\n")
-print("Preparation: ", "\n", prep_df, "\n\n")
-print("Nutrition Facts:", "\n", nutrition_df)
+#print("Meal Information:", "\n", meal_df, "\n\n")
+#print("Preparation: ", "\n", prep_df, "\n\n")
+#print("Nutrition Facts:", "\n", nutrition_df)
 
-choice = int(input("Enter the Meal ID of the recipe you want to make (located on the far left of the tables above): "))
-recipe_link = collection['hits'][choice]['recipe']['url'] 
-print("Here is the link to the full recipe:", "\n", recipe_link)
+#choice = int(input("Enter the Meal ID of the recipe you want to make (located on the far left of the tables above): "))
+#recipe_link = collection['hits'][choice]['recipe']['url'] 
+#print("Here is the link to the full recipe:", "\n", recipe_link)
+print(type(df))
+print(type(engine))

@@ -1,8 +1,25 @@
 import unittest
 from recipes import *
+random.seed(146)
 
-class Test(unittest.TestCase):
-    pass
+class Recipes_Tester(unittest.TestCase):
+
+    def test_get_cal(self): # works fine
+        print('\nTesting get_cal acceptable calories')
+        observed = indices
+        expected = get_cal(cal_count)
+        self.assertEqual(observed, expected)
+
+    def test_get_recipe(self): # works fine
+        print('\nTesting get_recipe verify dictionary')
+        observed = test_dict
+        expected = get_final_dict()
+        self.assertEqual(observed, expected)
+
+
+
+if __name__ == '__main__':
+    unittest.main()
 
 
 

@@ -5,16 +5,16 @@ import pandas as pd
 import sqlalchemy as sql
 import random
 
+random.seed(146) # for testing purposes only
 
+
+# Authentication
 e = Edamam(nutrition_appid='26d80d09',
            nutrition_appkey='33fa304b7f52b8f304123a71ee739bfd',
            recipes_appid='a643e9ab',
            recipes_appkey='0a83d44746617752c2968dd4bb4aa8f0',
            food_appid='dc3a13bb',
            food_appkey='ad3d860e92f5789744ffa1d6579f7c9f')
-
-# Variables:
-
 
 # Search prompt:
 main_ingred = input("Welcome to the Lean Green Meal Machine! Input up to two main ingredients that you want in your meal: ")
@@ -46,7 +46,7 @@ final_dict = {'Name' : [],
 }
 
 
-def get_cal(item, cal_max):
+def get_cal(cal_max):
         rec_idx_list = []
         while len(rec_idx_list) < 8:
                 max = len(collection['hits']) - 1
@@ -62,7 +62,7 @@ def get_cal(item, cal_max):
                 if calories < int(cal_max):
                         rec_idx_list.append(idx)
 
-        return rec_idx_list
+        return set(rec_idx_list)
 
 
 def get_recipe(item, idx):   
@@ -106,9 +106,12 @@ def create_selection(idx_list, item):
         for i in idx_list:
                 get_recipe(item, i)
 
-indices = set(get_cal(main_ingred, cal_count))
+indices = get_cal(cal_count)
 create_selection(indices, main_ingred)
 
+def get_final_dict(): # for testing 
+        return final_dict
+test_dict = get_final_dict() # testing var
 
 # Create the data frame/table
 df = pd.DataFrame.from_dict(final_dict)
@@ -133,6 +136,6 @@ print("Meal Information:", "\n", meal_df, "\n\n")
 print("Preparation: ", "\n", prep_df, "\n\n")
 print("Nutrition Facts:", "\n", nutrition_df)
 
-choice = int(input("Enter the Meal ID of the recipe you want to make (located on the far left of the tables above): "))
+choice = int(input("Enter the Meal ID of the recipe you want to make (located on the far right of the Meal Info table): "))
 recipe_link = collection['hits'][choice]['recipe']['url'] 
 print("Here is the link to the full recipe:", "\n", recipe_link)
